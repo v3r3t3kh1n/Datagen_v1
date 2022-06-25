@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact name="DataGen_v1:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/DataGen_v1_jar</output-path>
+    <root id="root">
+      <element id="archive" name="DataGen_v1.jar">
+        <element id="module-output" name="DataGen_v1" />
+      </element>
+    </root>
+  </artifact>
+</component>
