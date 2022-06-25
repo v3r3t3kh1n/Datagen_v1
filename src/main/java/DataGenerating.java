@@ -4,7 +4,6 @@ import java.sql.*;
 
 public class DataGenerating {
     public static void main(String[] args) {
-        long startTime = System.currentTimeMillis();
         try { // trying to create some customers to prepare data
             Customers createCustomers = new Customers();
             createCustomers.CreateCustomer(2);
@@ -29,7 +28,5 @@ public class DataGenerating {
         } catch (SQLException | KafkaException | ExecutionException | InterruptedException ske) {
             System.out.println(ske.getMessage());
         }
-        long workTime = System.currentTimeMillis() - startTime;
-        System.out.println("WorkTime " + (workTime) + " ms");
     }
 }
