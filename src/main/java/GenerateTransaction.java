@@ -1,5 +1,3 @@
-import org.apache.kafka.common.message.CreateTopicsRequestData;
-
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -30,8 +28,6 @@ public class GenerateTransaction {
         String Transactions = RandomNumericString.rs(String.valueOf(8));
         String LoyaltyScoring = RandomNumericString.rs(String.valueOf(4));
         String SecurityCode = RandomAlphabeticString.rs(String.valueOf(6));
-//        String sql = "INSERT INTO data (_id,ModifiedDate,Balance,Customer,SSN,CreditScoring,Age,Transactions,LoyaltyScoring,SecurityCode) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')".formatted(_id, ModifiedDate, Balance, Customer, SSN, CreditScoring.replaceFirst("^0+(?!$)", ""), Age.replaceFirst("^0+(?!$)", ""), Transactions.replaceFirst("^0+(?!$)", ""), LoyaltyScoring.replaceFirst("^0+(?!$)", ""), SecurityCode);
-//        stmt.executeUpdate(sql);
         return (_id + " / " + ModifiedDate + " / " + Balance + " / " + Customer + " / " + SSN + " / " + CreditScoring + " / " + Age + " / " + Transactions + " / " + LoyaltyScoring + " / " + SecurityCode);
     }
 }
