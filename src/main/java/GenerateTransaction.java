@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.Random;
 
 public class GenerateTransaction {
-    public void NewTransaction() throws SQLException {
+    static String NewTransaction() throws SQLException {
         Connection conn = ConnectionManager.getRootConnection();
         Statement stmt = conn.createStatement();
         Date date = new Date();
@@ -28,7 +28,6 @@ public class GenerateTransaction {
         String Transactions = RandomNumericString.rs(String.valueOf(8));
         String LoyaltyScoring = RandomNumericString.rs(String.valueOf(4));
         String SecurityCode = RandomAlphabeticString.rs(String.valueOf(6));
-        String sql = "INSERT INTO data (_id,ModifiedDate,Balance,Customer,SSN,CreditScoring,Age,Transactions,LoyaltyScoring,SecurityCode) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')".formatted(_id, ModifiedDate, Balance, Customer, SSN, CreditScoring.replaceFirst("^0+(?!$)", ""), Age.replaceFirst("^0+(?!$)", ""), Transactions.replaceFirst("^0+(?!$)", ""), LoyaltyScoring.replaceFirst("^0+(?!$)", ""), SecurityCode);
-        stmt.executeUpdate(sql);
+        return (_id + " / " + ModifiedDate + " / " + Balance + " / " + Customer + " / " + SSN + " / " + CreditScoring + " / " + Age + " / " + Transactions + " / " + LoyaltyScoring + " / " + SecurityCode);
     }
 }

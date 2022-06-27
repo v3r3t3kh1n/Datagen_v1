@@ -10,7 +10,6 @@ public class RandomNumericString {
     }
 
     public static String rs(String args) {
-        String out = args;
-        return RandomNumericString.getRandomNumericString(Integer.parseInt(out));
+        return RandomNumericString.getRandomNumericString(Integer.parseInt(args));
     }
 }
